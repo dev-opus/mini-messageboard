@@ -4,7 +4,8 @@
   "description": "a mini messaging board for learning purposes",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app",
+    "devStart": "nodemon app"
   },
   "author": "victor orlunda <vicorlunda@gmail.com>",
   "license": "MIT",
