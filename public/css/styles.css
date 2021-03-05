@@ -1,0 +1,42 @@
+body {
+  background-color: #222;
+  color: #fff;
+}
+
+article {
+  border: 1px solid gray;
+  padding: 15px;
+  width: 540px;
+}
+
+.container {
+  width: 720px;
+  margin-top: 40px;
+  margin-left: 70px;
+  padding: 20px 10px;
+}
+
+span {
+  background-color: rgb(4, 73, 111);
+  padding: 11px 8px;
+  margin: 15px 0;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+span:hover {
+  background-color: rgb(21, 118, 170);
+  color: rgb(233, 227, 227);
+}
+
+span:active {
+  transform: scale(0.8);
+}
+
+span > a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 11px 8px;
+  margin: 15px 0;
+}
