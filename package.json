@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "a mini messaging board for learning purposes",
   "main": "app.js",
+  "engines": {
+    "node": "14.15.1"
+  },
   "scripts": {
     "start": "node app",
     "devStart": "nodemon app"
