@@ -43,3 +43,44 @@ span > a {
   padding: 11px 8px;
   margin: 15px 0;
 }
+
+/* form styles */
+
+.form-container {
+  width: 540px;
+  border: 1px solid rgb(151, 138, 138);
+  margin: 50px auto;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+.inp {
+  display: block;
+  line-height: 1.4em;
+  padding: 5px 4px;
+  margin-bottom: 20px;
+}
+
+.txt {
+  line-height: 1.4em;
+  padding: 5px 4px;
+  resize: none;
+}
+
+.btn {
+  display: block;
+  padding: 8px 14px;
+  margin-top: 10px;
+  background-color: rgb(4, 73, 111);
+  font-size: 1rem;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 0.35em;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: rgb(21, 118, 170);
+  color: rgb(233, 227, 227);
+}
