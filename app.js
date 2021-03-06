@@ -19,6 +19,7 @@ app.set('view engine', 'hbs');
 
 // router level middleware
 app.use('/', require('./routes/index'));
+app.use('/new', require('./routes/new'))
 
 // fire up the server!
 app.listen(port, () => {
