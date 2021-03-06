@@ -11,9 +11,12 @@ article {
 
 .container {
   width: 720px;
-  margin-top: 40px;
   margin-left: 70px;
   padding: 20px 10px;
+}
+
+.greeting {
+  color: wheat;
 }
 
 span {
