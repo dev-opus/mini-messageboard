@@ -10,3 +10,11 @@ module.exports.genPassword = password => {
     hash,
   };
 };
+
+module.exports.verifyPassword = (password, salt, hash) => {
+  const testHash = crypto
+    .pbkdf2Sync(password, salt, 10000, 32, 'sha512')
+    .toString('hex');
+
+  return hash === testHash;
+};
