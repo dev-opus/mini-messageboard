@@ -13,4 +13,5 @@ const UserSchema = new Schema({
   messages: [{ type: Schema.Types.ObjectId, ref: 'Message' }],
 });
 
-module.exports.User = connection.model('User', UserSchema);
+const User = connection.model('User', UserSchema);
+module.exports = User

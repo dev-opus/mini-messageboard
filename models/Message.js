@@ -18,4 +18,5 @@ const MessageSchema = new Schema({
   },
 });
 
-module.exports.Message = connection.model('Message', MessageSchema);
+const Message = connection.model('Message', MessageSchema);
+module.exports = Message;
