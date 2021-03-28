@@ -43,6 +43,7 @@ app.use(
 app.use('/', require('./routes/homepage'));
 app.use('/index', require('./routes/index'));
 app.use('/new', require('./routes/new'));
+app.use('/register', require('./routes/register'))
 
 // fire up the server!
 app.listen(port, () => {
