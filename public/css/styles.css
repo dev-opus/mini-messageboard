@@ -98,3 +98,14 @@ span > a {
 .h-btn:last-child {
   margin-left: 20px;
 }
+
+.r-inp {
+  display: block;
+  line-height: .8em;
+  padding: 4px 2px;
+  border-radius: .25em;
+}
+
+.r-div {
+  padding: 4px 0;
+}
