@@ -3,10 +3,18 @@
     Mini Messageboard
   </h1>
 
-  <p>
+  <h2>
     <strong>
       Sign up
     </strong>
+  </h2>
+
+  {{#if already}}
+  <p>
+    <small>
+      {{already}}
+    </small>
+    
   </p>
 
   <form method="POST" action="/register">
@@ -25,4 +33,23 @@
       Sign up
     </button>
   </form>
+  {{else}}
+  
+  <form method="POST" action="/register">
+
+    <div class="r-div">
+       <label for="username">Username</label>
+      <input type="text" name="username" id="username" class="r-inp">
+    </div>
+
+    <div class="r-div">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" class="r-inp">
+    </div>
+    
+    <button class="btn">
+      Sign up
+    </button>
+  </form>
+  {{/if}}
 </div>
