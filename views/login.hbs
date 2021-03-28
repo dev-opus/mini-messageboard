@@ -9,7 +9,14 @@
     </strong>
   </h2>
 
-  <form method="POST" action="/login">
+  {{#if login}}
+  <p>
+    <strong>
+      {{login}}
+    </strong>
+  </p>
+
+    <form method="POST" action="/login">
 
     <div class="r-div">
        <label for="username">Username</label>
@@ -25,4 +32,26 @@
       Log in
     </button>
   </form>
+
+  {{else}}
+
+    <form method="POST" action="/login">
+
+    <div class="r-div">
+       <label for="username">Username</label>
+      <input type="text" name="username" id="username" class="r-inp">
+    </div>
+
+    <div class="r-div">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" class="r-inp">
+    </div>
+    
+    <button class="btn">
+      Log in
+    </button>
+  </form>
+  {{/if}}
+
+
 </div>
