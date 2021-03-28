@@ -40,7 +40,8 @@ app.use(
 );
 
 // router level middleware
-app.use('/', require('./routes/index'));
+app.use('/', require('./routes/homepage'));
+app.use('/index', require('./routes/index'));
 app.use('/new', require('./routes/new'));
 
 // fire up the server!
