@@ -8,6 +8,7 @@ const port = process.env.PORT || 8080;
 
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
+const passport = require('passport');
 
 // set-up body-parsing middlewares
 app.use(express.json());
@@ -39,11 +40,17 @@ app.use(
   })
 );
 
+// load passport
+require('./config/passport-config');
+app.use(passport.initialize());
+app.use(passport.session());
+
 // router level middleware
 app.use('/', require('./routes/homepage'));
 app.use('/index', require('./routes/index'));
 app.use('/new', require('./routes/new'));
-app.use('/register', require('./routes/register'))
+app.use('/register', require('./routes/register'));
+app.use('/login', require('./routes/login'));
 
 // fire up the server!
 app.listen(port, () => {
