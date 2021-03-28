@@ -13,10 +13,10 @@ const verifyCb = async (username, password, done) => {
     const { salt, hash } = user;
     const valid = verifyPassword(password, salt, hash);
 
-    if (valid) {
-      return done(null, user);
-    } else {
+    if (!valid) {
       return done(null, false);
+    } else {
+      return done(null, user);
     }
   } catch (error) {
     done(error);
@@ -27,14 +27,11 @@ const strategy = new LocalStrategy(verifyCb);
 passport.use(strategy);
 
 passport.serializeUser((user, done) => {
-  return done(null, user.id);
+  done(null, user);
 });
 
-passport.deserializeUser(async (userId, done) => {
-  try {
-    const user = await User.findById(userId);
-    return done(null, user);
-  } catch (error) {
-    done(error);
-  }
+passport.deserializeUser((userId, done) => {
+  User.findById(userId)
+    .then(user => done(null, user))
+    .catch(err => done(err));
 });
