@@ -1,20 +1,28 @@
 const express = require('express');
 const router = express.Router();
-const messages = require('../models/messages');
+const Message = require('../models/Message');
 
 router.get('/', (req, res) => {
-  res.render('form');
+  if (req.isAuthenticated()) {
+    res.render('form');
+  } else {
+    res.render('login', {
+      login: 'You must be logged in to view/create resources',
+    });
+  }
 });
 
-router.post('/', (req, res) => {
-  const data = {
-    text: req.body.text,
-    user: req.body.name,
-    added: new Date(),
-  };
-
-  messages.push(data);
-  res.redirect('/');
+router.post('/', async (req, res) => {
+  try {
+    if (req.isAuthenticated()) {
+      const message = new Message({
+        text: req.body.text,
+        user: req.user._id,
+      });
+      await message.save();
+      res.redirect('/index');
+    }
+  } catch (error) {}
 });
 
 module.exports = router;
