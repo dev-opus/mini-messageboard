@@ -101,11 +101,15 @@ span > a {
 
 .r-inp {
   display: block;
-  line-height: .8em;
+  line-height: 0.8em;
   padding: 4px 2px;
-  border-radius: .25em;
+  border-radius: 0.25em;
 }
 
 .r-div {
   padding: 4px 0;
+}
+
+.logout {
+  margin-left: 20px;
 }
