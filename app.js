@@ -51,6 +51,7 @@ app.use('/index', require('./routes/index'));
 app.use('/new', require('./routes/new'));
 app.use('/register', require('./routes/register'));
 app.use('/login', require('./routes/login'));
+app.use('/logout', require('./routes/logout'));
 
 // fire up the server!
 app.listen(port, () => {
