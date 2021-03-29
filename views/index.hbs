@@ -7,13 +7,17 @@
     <a href='/new'>add a message</a>
   </span>
 
+  <span>
+    <a href="/logout">Log out</a>
+  </span>
+
   {{#each messages}}
     <article>
       <p>
         {{text}}
       </p>
       <p>
-        by <strong>{{user}}</strong>
+        by <strong>{{user.username}}</strong>
       </p>
 
       <p>
